@@ -64,6 +64,9 @@ endif
 SHELL = /usr/bin/env bash -o pipefail
 .SHELLFLAGS = -ec
 
+# Setting podman as default container commander
+CONTAINER_CMD?=podman
+
 .PHONY: all
 all: build
 
@@ -318,3 +321,7 @@ catalog-build: opm ## Build a catalog image.
 .PHONY: catalog-push
 catalog-push: ## Push a catalog image.
 	$(MAKE) docker-push IMG=$(CATALOG_IMG)
+
+.PHONY: gosec
+gosec:
+	$(SHELL) hack/gosec.sh
