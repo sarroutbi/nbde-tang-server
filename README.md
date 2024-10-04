@@ -438,44 +438,7 @@ Please, follow instructions in previous repository to execute tang-operator func
 
 :exclamation: CI/CD is in a continuous "work in progress" state :exclamation:
 
-tang-operator uses Github Actions to perform CI/CD (Continuous Integration/Continuous Delivery).
-There are different Github actions that will perform different tasks:
-
-### Default compilation, tests and deploy
-This is a complete verification job that will run for each commit to main or PR.
-It performs following steps:
-
-* Set up Go
-* Build
-* Unit Test
-* Minikube Installation
-* Check Minikube Status
-* Deployment
-* Scorecard Test Execution
-
-### Cross compilation
-This job cross compiles code in other supported architectures, in particular for next architectures:
-* `ppc64le`
-* `s390x`
-* `arm64`
-* `mips64`
-* `riscv64`
-* `amd64`
-
-### Shellcheck
-Job that helps to check that existing `bash` scripts in the projects contain no fails.
-
-### Spellcheck
-Specific job that checks for spell correctness in documentation (in particular, for Markdown files).
-
-### Golang CI lint
-This job performs static check of Golang code.
-
-### Staticcheck
-The purpose of this job performs is similar to the previous one, static check of Golang code.
-
-### Yamllint
-This Github action checks for correct syntax for .yaml files.
+CI/CD operator is based in Konflux. For more information, please check [Konflux Documentation](https://konflux-ci.dev/docs/)
 
 ## Scorecard
 
