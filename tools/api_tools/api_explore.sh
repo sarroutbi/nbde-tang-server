@@ -118,9 +118,16 @@ ${K8SC} -n "${NAMESPACE}" get secret "${SECRET}" -o json | jq -Mr '.data["ca.crt
 APISERVER=https://$("${K8SC}" -n default get endpoints kubernetes --no-headers | awk '{ print $2 }')
 
 ### Test API
-echo "---Test API---"
-${K8SC} "/openapi/v2"
-echo "---Test API---"
+echo "---Test API (v2)---"
+${K8SC} get --raw "/openapi/v2"
+echo "---Test API (v2)---"
+echo "---Test API (v3)---"
+${K8SC} get --raw  "/openapi/v3"
+echo "---Test API (v3)---"
+echo "---Test API (v3)---"
+${K8SC} get --raw  "/openapi/v3/apis/nbde.openshift.io/v1alpha1"
+echo
+echo "---Test API (v3)---"
 
 ### Extract logs from pod
 echo "---Extract logs from pod---"
