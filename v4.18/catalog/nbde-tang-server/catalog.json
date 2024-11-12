@@ -38,6 +38,91 @@
                 "packageName": "nbde-tang-server",
                 "version": "1.1.0"
             }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Basic Install",
+                    "categories": "Security",
+                    "containerImage": "registry.redhat.io/",
+                    "createdAt": "2024-11-12T10:06:06Z",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "false",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/proxy-aware": "false",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.37.0",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
+                    "repository": "https://github.com/openshift/nbde-tang-server"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {
+                    "owned": [
+                        {
+                            "name": "nbde.openshift.io",
+                            "version": "v1alpha1",
+                            "kind": "TangServer",
+                            "displayName": "Tang Server",
+                            "description": "Tang Server allows definition of the NBDE Tang Server deployment"
+                        }
+                    ]
+                },
+                "description": "NBDE Tang Server operator provides Network-Bound Disk Encryption in OpenShift",
+                "displayName": "NBDE Tang Server",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "NBDE",
+                    "PBD",
+                    "Installation",
+                    "Network"
+                ],
+                "labels": {
+                    "operatorframework.io/arch.amd64": "supported",
+                    "operatorframework.io/arch.s390x": "supported",
+                    "operatorframework.io/os.linux": "supported"
+                },
+                "links": [
+                    {
+                        "name": "NBDE Tang Server",
+                        "url": "https://github.com/openshift/nbde-tang-server"
+                    }
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat",
+                        "email": "support@redhat.com"
+                    }
+                ],
+                "maturity": "stable",
+                "provider": {
+                    "name": "Red Hat"
+                }
+            }
         }
     ],
     "relatedImages": [
