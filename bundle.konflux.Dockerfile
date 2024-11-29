@@ -5,9 +5,6 @@ ARG ORIGINAL_IMG=quay.io/sec-eng-special/nbde-tang-server:v1.1.0
 WORKDIR /code
 COPY ./ ./
 
-RUN echo "SNAPSHOT=${SNAPSHOT}"
-RUN bash -c printenv
-
 # Replace the bundle image in the repository with the one specified by the IMG build argument.
 RUN chmod -R g+rwX ./ && find bundle/ && find bundle -type f -exec sed -i \
    "s|${ORIGINAL_IMG}|${IMG})|g" {} \+; grep -rq "${ORIGINAL_IMG}" bundle/ && \
