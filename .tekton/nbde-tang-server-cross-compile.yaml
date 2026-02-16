@@ -51,13 +51,6 @@ spec:
               git log -1
               GOOS=$(go env GOOS)
               GOPATH=$(go env GOPATH)
-              pids=""
               for arch in ${archs}; do
-                V=1 TANG_OPERATOR_CI=1 GOOS=$GOOS GOARCH=$arch GOPATH=$GOPATH make build &
-                pids="$pids $!"
+                V=1 TANG_OPERATOR_CI=1 GOOS=$GOOS GOARCH=$arch GOPATH=$GOPATH make build
               done
-              failed=0
-              for pid in $pids; do
-                wait $pid || failed=1
-              done
-              exit $failed
